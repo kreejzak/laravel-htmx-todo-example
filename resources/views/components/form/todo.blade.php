@@ -3,8 +3,14 @@
     @csrf
     <div class="flex flex-col space-y-2">
         <textarea name="title" required id="title" class="py-2 px-3 bg-gray-900 rounded" rows="2"></textarea>
-        <button class="py-2 w-full font-bold text-center text-teal-50 bg-teal-700 rounded" type="submit">
-            Add todo
+        <button
+            class="flex justify-center items-center py-2 w-full h-12 font-bold text-center text-teal-50 bg-teal-700 rounded"
+            type="submit">
+            <img src="https://samherbert.net/svg-loaders/svg-loaders/tail-spin.svg" class="htmx-indicator"
+                width="25" alt="spinner">
+            <span>
+                Add todo
+            </span>
         </button>
     </div>
 </form>

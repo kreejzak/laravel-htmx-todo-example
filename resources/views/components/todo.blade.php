@@ -2,7 +2,7 @@
     <label for="todo-{{ $todo->id }}"
         class="flex justify-between items-center py-2 px-3 w-full rounded shadow  toggle animate duration-200 bg-gray-900 {{ $todo->completed ? 'opacity-20' : '' }}">
         <div class="flex items-center space-x-2">
-            <form hx-target="closest li" hx-swap="outerHTML">
+            <form hx-trigger="from:input find" hx-target="closest li" hx-swap="outerHTML">
                 @csrf
                 <input hx-put="todos/{{ $todo->id }}" id="todo-{{ $todo->id }}" name="checked" type="checkbox"
                     {{ $todo->completed ? 'checked' : '' }} />
