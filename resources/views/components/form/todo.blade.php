@@ -4,7 +4,6 @@
     hx-swap="afterbegin"
     hx-on::after-request=" if(event.detail.successful) this.reset()"
 >
-    @csrf
     <div class="flex flex-col space-y-2">
         <textarea
             name="title"

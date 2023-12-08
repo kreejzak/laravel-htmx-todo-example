@@ -6,21 +6,17 @@
             'opacity-20' => $todo->completed,
         ])
     >
-        <div class="flex items-center space-x-2">
-            <form
+        <div class="flex ml-2 items-center mr-2 space-x-2">
+            <input
+                hx-put="todos/{{ $todo->id }}"
                 hx-target="closest li"
                 hx-swap="outerHTML"
-            >
-                @csrf
-                <input
-                    hx-put="todos/{{ $todo->id }}"
-                    id="todo-{{ $todo->id }}"
-                    name="checked"
-                    type="checkbox"
-                    @checked($todo->completed)
-                />
+                id="todo-{{ $todo->id }}"
+                name="checked"
+                type="checkbox"
+                @checked($todo->completed)
+            />
 
-            </form>
             <div @class([
                 'line-through' => $todo->completed,
             ])>
@@ -28,20 +24,17 @@
             </div>
         </div>
         <div class="flex items-center space-x-2">
-            <form
-                hx-confirm="Are you sure?"
+            <button
                 hx-delete="todos/{{ $todo->id }}"
+                hx-trigger="click"
+                hx-confirm="Are you sure?"
                 hx-target="closest li"
                 hx-swap="delete"
+                class="text-sm text-red-500"
+                type="submit"
             >
-                @csrf
-                <button
-                    class="text-sm text-red-500"
-                    type="submit"
-                >
-                    delete
-                </button>
-            </form>
+                delete
+            </button>
         </div>
     </label>
 </li>
