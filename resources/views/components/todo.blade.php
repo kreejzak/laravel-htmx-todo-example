@@ -4,7 +4,7 @@
         <div class="flex items-center space-x-2">
             <form hx-target="closest li" hx-swap="outerHTML">
                 @csrf
-                <input hx-put="todos/{{ $todo->id }} "id="todo-{{ $todo->id }}" name="checked" type="checkbox"
+                <input hx-put="todos/{{ $todo->id }}" id="todo-{{ $todo->id }}" name="checked" type="checkbox"
                     {{ $todo->completed ? 'checked' : '' }} />
 
             </form>
