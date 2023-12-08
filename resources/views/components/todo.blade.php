@@ -21,7 +21,9 @@
                 />
 
             </form>
-            <div>
+            <div @class([
+                'line-through' => $todo->completed,
+            ])>
                 {{ $todo->title }}
             </div>
         </div>
