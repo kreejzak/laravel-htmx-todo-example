@@ -40,4 +40,17 @@ class TodoController extends Controller
     {
         $todo->delete();
     }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(Todo $todo): View
+    {
+        $todo->check($todo->completed);
+        $todo = Todo::find($todo->id);
+
+        return view('components.todo', [
+            'todo' => $todo,
+        ]);
+    }
 }

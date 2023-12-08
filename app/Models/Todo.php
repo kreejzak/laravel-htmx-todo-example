@@ -16,4 +16,9 @@ class Todo extends Model
     protected $casts = [
         'completed' => 'boolean',
     ];
+
+    public function check(bool $value): void
+    {
+        $this->update(['completed' => ! $value]);
+    }
 }
