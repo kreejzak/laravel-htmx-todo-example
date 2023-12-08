@@ -1,12 +1,20 @@
 {
-    "plugins": ["@shufo/prettier-plugin-blade"],
-    "overrides": [
-        {
-            "files": ["*.blade.php"],
-            "options": {
-                "parser": "blade",
-                "tabWidth": 4
-            }
-        }
-    ]
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 4,
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "vueIndentScriptAndStyle": false,
+  "printWidth": 80,
+  "trailingComma": "none",
+  "plugins": ["@shufo/prettier-plugin-blade"],
+  "overrides": [
+    {
+      "files": ["*.blade.php"],
+      "options": {
+        "parser": "blade",
+        "tabWidth": 4
+      }
+    }
+  ]
 }
