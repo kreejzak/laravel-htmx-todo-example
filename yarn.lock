@@ -190,6 +190,11 @@ fsevents@~2.3.2:
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.3.tgz#cac6407785d03675a2a5e1a5305c697b347d90d6"
   integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
+htmx.org@^1.9.9:
+  version "1.9.9"
+  resolved "https://registry.yarnpkg.com/htmx.org/-/htmx.org-1.9.9.tgz#e9f94cb3e39ab249430244dc9ae168b47d610920"
+  integrity sha512-PDEZU1me7UGLzQk98LyfLvwFgdtn9mrCVMmAxv1/UjshUnxsc+rouu+Ot2QfFZxsY4mBCoOed5nK7m9Nj2Tu7g==
+
 laravel-vite-plugin@^0.8.0:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/laravel-vite-plugin/-/laravel-vite-plugin-0.8.1.tgz#5e077944946c02008993f7cece8c36144a25c433"
