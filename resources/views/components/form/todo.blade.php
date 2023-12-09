@@ -10,7 +10,6 @@
         <textarea
             name="title"
             placeholder="Add a todo..."
-            {{-- required --}}
             id="title"
             class="py-2 px-3 bg-gray-900 rounded"
             rows="2"
