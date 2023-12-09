@@ -30,13 +30,14 @@ class TodoController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->
+            return response(
                 view('components.form.todo', [
                     'errors' => $validator->errors(),
-                ])
-                    ->header('HX-Retarget', '#todo-form')
-                    ->header('HX-Reswap', 'outerHTML');
-            // ->status(422);
+                ]),
+                422
+            )
+                ->header('HX-Retarget', '#todo-form')
+                ->header('HX-Reswap', 'outerHTML');
         }
 
         Todo::create($validator->validated());
