@@ -17,7 +17,7 @@
         ></textarea>
 
         @if ($errors->has('title'))
-            <div class=" error text-red-500 text-sm ">
+            <div class="error text-red-500 text-sm ">
                 {{ $errors->first('title') }}
             </div>
         @endif
@@ -27,7 +27,7 @@
             type="submit"
         >
             <img
-                src="https://samherbert.net/svg-loaders/svg-loaders/tail-spin.svg"
+                src="/images/tail-spin.svg"
                 class="htmx-indicator"
                 width="25"
                 alt="spinner"
