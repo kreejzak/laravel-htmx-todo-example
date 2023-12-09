@@ -4,9 +4,7 @@
         id="todos"
         class="flex flex-col space-y-2 animate"
     >
-        @foreach ($todos as $todo)
-            @include('components.todo', ['todo' => $todo])
-        @endforeach
+        @each('components.todo', $todos, 'todo')
     </ul>
 
     @include('components.form.todo')

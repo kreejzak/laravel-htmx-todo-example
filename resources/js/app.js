@@ -1,9 +1,17 @@
 // import './bootstrap';
 
-import 'htmx.org';
+import 'htmx.org'
 import autoAnimate from '@formkit/auto-animate'
 
-const animateElements = document.querySelectorAll('.animate')
-animateElements.forEach((element) => {
-    autoAnimate(element)
+function animateItems(items) {
+    items.forEach((item) => autoAnimate(item))
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const animateElements = document.querySelectorAll('.animate')
+    animateItems(animateElements)
+})
+document.addEventListener('htmx:afterSettle', (data) => {
+    const newAnimateElements = data.target.querySelectorAll('.animate')
+    animateItems(newAnimateElements)
 })

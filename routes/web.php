@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::controller(TodoController::class)->group(function () {
-    Route::get('/', 'index');
-    Route::get('/todos', 'index');
-    Route::post('/todos', 'store');
-    Route::put('/todos/{todo}', 'update');
-    Route::delete('/todos/{todo}', 'destroy');
+    Route::get('/', 'index')->name('todos.index');
+    Route::get('/todos', 'index')->name('todos.index');
+    Route::post('/todos', 'store')->name('todos.store');
+    Route::put('/todos/{todo}', 'update')->name('todos.update');
+    Route::delete('/todos/{todo}', 'destroy')->name('todos.destroy');
 });

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
+use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
 class TodoController extends Controller
@@ -18,15 +21,25 @@ class TodoController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Stpre a newly created resource in storage.
      */
-    public function store(): View
+    public function store(Request $request): View|Response
     {
-        $attributes = request()->validate([
-            'title' => 'required',
+        $validator = Validator::make($request->all(), [
+            'title' => ['required'],
         ]);
 
-        Todo::create($attributes);
+        if ($validator->fails()) {
+            return response()->
+                view('components.form.todo', [
+                    'errors' => $validator->errors(),
+                ])
+                    ->header('HX-Retarget', '#todo-form')
+                    ->header('HX-Reswap', 'outerHTML');
+            // ->status(422);
+        }
+
+        Todo::create($validator->validated());
 
         return view('components.todo', [
             'todo' => Todo::latest()->first(),
