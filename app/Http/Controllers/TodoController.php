@@ -42,9 +42,14 @@ class TodoController extends Controller
 
         Todo::create($validator->validated());
 
-        return view('components.todo', [
-            'todo' => Todo::latest()->first(),
-        ]);
+        return response(
+            view('components.todo', [
+                'todo' => Todo::latest()->first(),
+            ]),
+            201
+        )
+            ->header('HX-Trigger', 'removeEmpty');
+
     }
 
     /**
