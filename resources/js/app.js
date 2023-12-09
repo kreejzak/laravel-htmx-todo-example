@@ -4,7 +4,11 @@ import 'htmx.org'
 import autoAnimate from '@formkit/auto-animate'
 
 function animateItems(items) {
-    items.forEach((item) => autoAnimate(item))
+    items.forEach((item) =>
+        autoAnimate(item, {
+            duration: 150
+        })
+    )
 }
 
 document.addEventListener('DOMContentLoaded', () => {
