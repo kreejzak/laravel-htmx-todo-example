@@ -4,7 +4,7 @@
         id="todos"
         class="flex flex-col space-y-2 animate"
     >
-        @each('components.todo', $todos, 'todo')
+        @each('components.todo', $todos, 'todo', 'components.empty')
     </ul>
 
     @include('components.form.todo')
